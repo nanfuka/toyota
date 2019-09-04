@@ -113,7 +113,7 @@ var SalesTax = () => {
     towncode = document.getElementById("towncode").value;
     var checkbox = document.getElementById("chek").checked;
     var cos = Cost();
-    var taxrate = Math.round(0.1 * cos*100)/100;
+    var taxrate = Math.round(0.1 * cos * 100) / 100;
 
     if (towncode === "KLA" && checkbox === true) {
         document.getElementById("salestax").value = taxrate;
@@ -123,13 +123,13 @@ var SalesTax = () => {
 
     // get sales tax for mbarara and entebe
     else if (towncode === "MBR" && checkbox === true) {
-        var taxrate = Math.round(0.05 * cos*100)/100;
+        var taxrate = Math.round(0.05 * cos * 100) / 100;
 
         document.getElementById("salestax").value = taxrate;
         return taxrate;
     }
     else if (towncode === "EBB" && checkbox === true) {
-        var taxrate = Math.round(0.05 * cos*100)/100;
+        var taxrate = Math.round(0.05 * cos * 100) / 100;
         document.getElementById("salestax").value = taxrate;
         return taxrate;
 
@@ -235,19 +235,19 @@ var Total = () => {
 
 // function which computes every thing that will finally display in teh out put fields.
 Compute = () => {
-    ValidData(), Cost(), SalesTax(), ShippingHandling(), Total(); 
+    ValidData(), Cost(), SalesTax(), ShippingHandling(), Total();
 
 }
 
 
 // function which resets page and restores it to original page
-Neworder = ()=>{
+Neworder = () => {
     document.getElementById("neworders").reset();
 }
 
 // Function that exits from the current page
-Exits = ()=>{  
-    alert ("Do you really want to exit page?") 
-document.write("");
-    
+Exits = () => {
+    if (confirm("Do you really want to exit page?"))
+    document.write("");
+
 }
