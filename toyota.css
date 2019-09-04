@@ -8,7 +8,7 @@ body{
     margin-left: 2%;
     margin-top: 20px;
 }
-main{
+form{
     width: 70%;
     background-color: #FFE0C1;
      margin: 0 auto; 
@@ -139,16 +139,3 @@ width: 410px;
 .output input{
 margin-left: 0;
 }
-
-/* .money label{
-    background-color: orange;
-    width: 200px;
-    margin-left: 40px;
-} */
-/* label.priceper{
-    width: 400px;
-    background-color: yellowgreen;
-} */
-
-
-

@@ -19,7 +19,7 @@
                 <p id = "price_error"></p>
                 <p id = "quantity_error"></p>
             </div>
-    <main>
+    <form id = "neworders">
         <div class="inner-block">
             <section class="blockone">
                 <div class="each">
@@ -104,12 +104,12 @@
             </section>
             <div class="lowerbuttons">
                 <button onclick="Compute()">compute</button>
-                <button>New Order</button>
-                <button class="exits">exit</button>
+                <button onclick="Neworder()" id = "neworder">New Order</button>
+                <button class="exits" onclick = "Exits()">exit</button>
             </div>
         </div>
 
-    </main>
+    </form>
 
     <script src="myscript.js"></script>
 </body>
