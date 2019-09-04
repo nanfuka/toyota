@@ -1,0 +1,154 @@
+body{
+    display: flex;
+}
+.errors{
+    /* margin-top: 20%; */
+    font-size: 15px;
+    font-weight: 150%;
+    margin-left: 2%;
+    margin-top: 20px;
+}
+main{
+    width: 70%;
+    background-color: #FFE0C1;
+     margin: 0 auto; 
+    /* margin-top: 10%; */
+    color: #24292e;
+    font-size: 12px; 
+    /* font-weight: 150%; */
+    
+}
+.inner-block{
+    width: 98%; 
+    /* margin: 80px auto; */
+    
+ }
+ .blockone{
+    display: flex;
+
+}
+
+.blocktwo{
+    display: flex;
+} 
+
+fieldset{ 
+    background-color: #FFBF82;
+    border: solid 1px white;
+    display: grid; 
+    grid-template-columns: 100px 1fr;
+    margin-left: 0;
+    margin-right: 0;
+}
+.shipping{
+    display: block;
+    height: 91%;
+    width: 94%;
+    margin-left: 0;
+
+}
+.each{
+    margin-left: 1%;
+    width: 100%;
+    background-color: #FFBF82;
+    grid-template-columns: 100px 1fr;
+    margin-top: 8px;
+    /* margin-right: 2%; */
+} 
+fieldset input{
+    height: 20px;
+    margin-bottom: 5%;
+    border-radius: 0;
+    border-bottom: 0;
+    border-block-end-color: black;
+    }
+.output{
+    height: 92%;
+    grid-template-columns: 200px 1fr;
+    
+}
+.shipping input{
+    margin-left: 10%;
+    /* margin-top: 10%; */
+}
+.ship{
+    margin-top: 10%;
+}
+.customer_id{
+    width: 120px;
+}
+.state{
+    width: 40px;
+    text-transform: uppercase;
+}
+.retail{
+    margin-left: 20%;
+}
+.output input{
+    width: 130px;
+    margin-left: 30%;
+    text-align: right;
+
+
+}
+.pprice, .quantity{
+    text-align: right;
+}
+.money{
+display: flex;
+
+width: 410px;
+}
+.pprice{
+    width: 100px;
+}
+.quantity{
+    width: 50px;
+    
+}
+.exits{
+    margin-left: 67.7%;
+    width: 100px;
+    border-radius: 0;
+    background-color: #FFBF82;
+
+}
+.lowerbuttons{
+    margin-left: 8px;
+
+}
+.lowerbuttons button{
+    border-radius: 0;
+    background-color: #FFBF82;
+
+}
+
+.money input{
+    margin-left: 20px;
+}
+.quantity{
+    margin-left: 20px;
+}
+.quantit{
+    margin-left: 14.5%;
+}
+#custId, #nameerror, #custId, #towncodeerror, #nameerror, #partnumber_error, #disc_error, #price_error,#quantity_error{
+    color: red;
+    background-color: rgb(250, 216, 222);
+}
+.output input{
+margin-left: 0;
+}
+
+/* .money label{
+    background-color: orange;
+    width: 200px;
+    margin-left: 40px;
+} */
+/* label.priceper{
+    width: 400px;
+    background-color: yellowgreen;
+} */
+
+
+
