@@ -1,3 +1,4 @@
+
 // function which validates all fields in the form
 ValidData = () => {
     // the variables that cocnstitute the valid data function
@@ -14,51 +15,65 @@ ValidData = () => {
 
     if (Number(customerId.value)) {
         customerId.style.border = "2px green solid";
+        document.getElementById("custId").style.display = "none";
+        
+
     }
     else {
         document.getElementById("custId").innerHTML = " Customer ID cannot be missing, it should not contain any blank spaces and should contain only numbers"
         customerId.style.border = "2px red solid";
         return false;
-      
-    }
-    //  validate towncode Town code must always be entered as exactly three characters
-
-    const townnumber = /^[A-Za-z]+$/;
-    if (towncode.value.match(townnumber) && towncode.value.length === 3) {
-        towncode.style.border = "2px green solid";
-    }
-    else {
-        document.getElementById("towncodeerror").innerHTML = " Town code must always be entered as exactly three characters"
-        towncode.style.border = "2px red solid";
-        return false;
 
     }
+
     // validate customer name Customer Name cannot be missing.
 
     const cust_name = /^[A-Za-z]+$/;
     if (name.value.match(cust_name)) {
         name.style.border = "2px green solid";
+        document.getElementById("nameerror").style.display = "none";
+
     }
     else {
         document.getElementById("nameerror").innerHTML = " Customer name should be made up of characters and should not be empty"
         name.style.border = "2px red solid";
         return false;
     }
+
+    //  validate towncode Town code must always be entered as exactly three characters
+
+    const townnumber = /^[A-Za-z]+$/;
+    if (towncode.value.match(townnumber) && towncode.value.length === 3) {
+        towncode.style.border = "2px green solid";
+        document.getElementById("towncodeerror").style.display = "none";
+
+    }
+    else {
+        document.getElementById("towncodeerror").innerHTML = " Town code must always be entered as exactly three characters"
+        towncode.style.border = "2px red solid";
+        return false;
+        // document.getElementById("custId").innerHTML.style.display = "none";
+
+    }
+    
     // validate partnumber Part Number cannot be missing.
 
     if (Number(partnumber.value) > 0) {
         partnumber.style.border = "2px green solid";
+        document.getElementById("partnumber_error").style.display = "none"
+
     }
     else {
         document.getElementById("partnumber_error").innerHTML = " Part Number should consitute of only numbers and should not be missing"
         partnumber.style.border = "2px red solid";
         return false;
-
     }
     // validate description Description cannot be missing.
     const descript = /^[A-Za-z]+$/;
     if (description.value.match(descript)) {
         description.style.border = "2px green solid";
+        document.getElementById("disc_error").style.display = "none"
+
     }
     else {
         document.getElementById("disc_error").innerHTML = " Description cannot be missing."
@@ -69,6 +84,8 @@ ValidData = () => {
     // validate price per part Price must be a number that is greater than zero.
     if (Number(price.value) > 0) {
         price.style.border = "2px green solid";
+        document.getElementById("price_error").style.display = "none"
+
     }
     else {
         document.getElementById("price_error").innerHTML = " Price must be a number that is greater than zero."
@@ -79,21 +96,17 @@ ValidData = () => {
 
     if (Number(quantity.value > 0)) {
         quantity.style.border = "2px green solid";
+        document.getElementById("quantity_error").style.display = "none";
+
     }
     else {
         document.getElementById("quantity_error").innerHTML = " Quantity must be a number that is greater than zero."
         quantity.style.border = "2px red solid";
         return false;
     }
+    Cost(), SalesTax(), ShippingHandling(), Total();
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -107,7 +120,6 @@ var Cost = () => {
 
 
     var cos = price * quantity;
-    var oversizecharge = 5 * quantity;
 
     document.getElementById("cost").value = cos;
     
@@ -248,17 +260,18 @@ var Total = () => {
 // function which computes every thing that will finally display in teh out put fields.
 Compute = () => {
     
-    valids = ValidData()
-    if(valid === false){
-        return false;
-    }
-    else if(!valids){
-        return Cost(), SalesTax(), ShippingHandling(), Total();
-    }
-    else{
-        return false;
-    }
-    //  ValidData(), Cost(), SalesTax(), ShippingHandling(), Total();
+    // valids = ValidData()
+    // if(valid==true){
+    //     Cost(), SalesTax(), ShippingHandling(), Total();
+    //     return false;
+    // }
+    // else if(!valids){
+    //     return Cost(), SalesTax(), ShippingHandling(), Total();
+    // }
+    // else{
+    //     return false;
+    // }
+     ValidData(), Cost(), SalesTax(), ShippingHandling(), Total();
 
 }
 
@@ -274,85 +287,4 @@ Exits = () => {
         document.write("");
 
 }
-
-
-// // function which adds the valid information that has been submitted to the database
-
-// var database = () => {
-//     const mysql = require("mysql");
-//     const connection = mysql.createConnection({
-//         host: 'localhost',
-//         user: 'root',
-//         database: 'toyota',
-//         password: 'testt'
-
-//     });
-//     connection.connect((err) => {
-//         if (err) throw err;
-//         console.log('Connected!');
-//     });
-//     //   the data to be inserted into the datatbase
-//     valid = ValidData();
-//     shipmethods = shipMethod();
-//     shippinghandling = ShippingHandling();
-//     cost = Cost();
-//     total = Total();
-//     id = valid.customerId;
-//     name = valid.name;
-//     town = valid.towncode;
-//     retail = valid.retail;
-//     shippingmethod = shipmethods.shipsMeth;
-//     partno = valid.partnumber;
-//     desc = valid.description;
-//     prices = valid.price;
-//     quant = valid.quantity;
-//     oversized = shippinghandling.oversize;
-//     sales = SalesTax();
-//     ship = ShippingHandling();
-
-//     // the query statement
-//     const querrystring = "INSERT INTO purchases(id, name,towncode,retail, shipping-method,\
-//         partnumber,description, price,quantity,oversize,\
-//         cost,salestax,shipping,total) \
-//         VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-//     connection.query(querrystring,
-//         [id,
-//             name,
-//             towncode,
-//             retail,
-//             shippingmethod,
-//              partno, 
-//              desc, 
-//              prices, 
-//              quant, 
-//              oversized, 
-//              cost, 
-//              sales, 
-//              ship, 
-//              total]);
-
-
-// }
-
-// // find the value of the checked shipping item for the purpose of saving it into the database
-
-// shipMethod = () => {
-//     var shipping_method = document.getElementsByName('shippingss');
-//     // since all teh sipping methods go by the same name, loop through them.
-//     for (var i = 0, length = shipping_method.length; i < length; i++) {
-//         if (shipping_method[i].checked) {
-//             shipsMeth = shipping_method[i].value;
-//             //  identify the value of the checked radio button
-//             console.log(shipping_method[i].value);
-//             document.getElementById("shipanga").innerHTML = shipping_method[i].value;
-
-
-//             // only one radio can be logically checked, don't check the rest
-//             break;
-//         }
-
-//     }
-// }
-
-
 

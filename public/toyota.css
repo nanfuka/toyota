@@ -3,15 +3,18 @@ body{
 }
 .errors{
     /* margin-top: 20%; */
-    font-size: 15px;
+    font-size: 11px;
     font-weight: 150%;
-    margin-left: 2%;
-    margin-top: 20px;
+    /* margin-left: 2%; */
+    margin-top: 40px;
+    width:20% ;
 }
 form{
     width: 70%;
     background-color: #FFE0C1;
-     margin: 0 auto; 
+     /* margin: 0 auto;  */
+     margin-top: 3%;
+
     /* margin-top: 10%; */
     color: #24292e;
     font-size: 12px; 

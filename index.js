@@ -45,7 +45,7 @@ app.post("/db", (req, res) => {
     cost: req.body.cost,
     salestax: req.body.salestax,
 
-    shipping: req.body.shipping,
+    shipping: req.body.shippping,
     total: req.body.total
 
   };
@@ -70,12 +70,15 @@ app.post("/db", (req, res) => {
     object.shipping,
     object.total
   ]);
-
+  console.log(object.shipping);
+  // console.log(object.cost);
+  // console.log(object.salestax);
+  // console.log(object.total);
   return res.sendfile(html_dir + 'toyota.html');
-    return false;
   res.end();
 });
 
 app.listen(3009);
 
 console.log("App running at Port 3009");
+// console.log(object.shipping);

@@ -20,7 +20,7 @@
                 <p id = "price_error"></p>
                 <p id = "quantity_error"></p>
             </div>
-    <form id = "neworders"  action="db" method="POST" onsubmit=" return ValidData()" action="db" method="POST" >
+    <form id = "neworders"  action="db" method="POST" onsubmit=" return ValidData()" >
         <div class="inner-block">
             <section class="blockone">
                 <div class="each">
@@ -105,14 +105,15 @@
             </section>
             <div class="lowerbuttons">
                 <button type = "submit">compute</button>
-                <!-- <button id = "neworderd" type = "reset">New Order</button> -->
+                <button id = "neworderd" type = "reset">New Order</button>
+                <button class="exits" onclick = "Exits()">exit</button>
 
             </div>
         </div>
 
     </form>
    
-    <button class="exits" onclick = "Exits()">exit</button>
+
 
     <script src="myscript.js"></script>
 </body>
