@@ -1,0 +1,19 @@
+{
+  "name": "toyota",
+  "version": "1.0.0",
+  "description": "this is a class assignment about a toyota project It culculates the sales tax, shipping cost and the total cost.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanfuka/toyota.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanfuka/toyota/issues"
+  },
+  "homepage": "https://github.com/nanfuka/toyota#readme"
+}
