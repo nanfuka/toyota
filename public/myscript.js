@@ -139,20 +139,20 @@ var SalesTax = () => {
     var cos = Cost();
     var taxrate = Math.round(0.1 * cos * 100) / 100;
 
-    if (towncode === "KLA" && checkbox === true) {
+    if (towncode.toUpperCase() === "KLA" && checkbox === true) {
         document.getElementById("salestax").value = taxrate;
         return taxrate;
 
     }
 
     // get sales tax for mbarara and entebe
-    else if (towncode === "MBR" && checkbox === true) {
+    else if (towncode.toUpperCase() === "MBR" && checkbox === true) {
         var taxrate = Math.round(0.05 * cos * 100) / 100;
 
         document.getElementById("salestax").value = taxrate;
         return taxrate;
     }
-    else if (towncode === "EBB" && checkbox === true) {
+    else if (towncode.toUpperCase() === "EBB" && checkbox === true) {
         var taxrate = Math.round(0.05 * cos * 100) / 100;
         document.getElementById("salestax").value = taxrate;
         return taxrate;

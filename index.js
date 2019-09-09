@@ -74,11 +74,16 @@ app.post("/db", (req, res) => {
   // console.log(object.cost);
   // console.log(object.salestax);
   // console.log(object.total);
-  return res.sendfile(html_dir + 'toyota.html');
-  res.end();
+  setTimeout(function(){
+    
+      res.redirect("/")
+      res.end();
+    
+  },1000);
 });
-
+    
 app.listen(3009);
 
 console.log("App running at Port 3009");
 // console.log(object.shipping);
+
