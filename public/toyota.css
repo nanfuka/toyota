@@ -1,10 +1,12 @@
+/* this page contains all the styling required for the toyota.html file */
 body{
     display: flex;
 }
 .errors{
     /* margin-top: 20%; */
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 150%;
+    font-family: sans-serif;
     /* margin-left: 2%; */
     margin-top: 40px;
     width:20% ;
@@ -135,10 +137,22 @@ width: 410px;
 .quantit{
     margin-left: 14.5%;
 }
-#custId, #nameerror, #custId, #towncodeerror, #nameerror, #partnumber_error, #disc_error, #price_error,#quantity_error{
+#custId, #nameerror, #towncodeerror, #nameerror, #partnumber_error, #disc_error, #price_error,#quantity_error{
     color: red;
     background-color: rgb(250, 216, 222);
+    margin-bottom: 25%;
 }
 .output input{
 margin-left: 0;
+}
+.exits{
+    margin-top: 0;
+}
+.overinput{
+    margin-left: 10%;
+    margin-top: 0;
+}
+.over{
+    margin-left: 7%;
+   
 }

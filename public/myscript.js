@@ -104,6 +104,7 @@ ValidData = () => {
         quantity.style.border = "2px red solid";
         return false;
     }
+    // execute all the functions
     Cost(), SalesTax(), ShippingHandling(), Total();
 
 }
@@ -117,8 +118,6 @@ var Cost = () => {
 
     var price = document.getElementById("price").value;
     var quantity = document.getElementById("quantity").value;
-
-
     var cos = price * quantity;
 
     document.getElementById("cost").value = cos;
@@ -251,35 +250,10 @@ var Total = () => {
     shippingcost = ShippingHandling();
     generalTotal = cost + salestaxes + shippingcost;
     document.getElementById("total").value = generalTotal;
-    return generalTotal;
+    return generalTotal.toFixed(2);
 
 }
 
-
-
-// function which computes every thing that will finally display in teh out put fields.
-Compute = () => {
-    
-    // valids = ValidData()
-    // if(valid==true){
-    //     Cost(), SalesTax(), ShippingHandling(), Total();
-    //     return false;
-    // }
-    // else if(!valids){
-    //     return Cost(), SalesTax(), ShippingHandling(), Total();
-    // }
-    // else{
-    //     return false;
-    // }
-     ValidData(), Cost(), SalesTax(), ShippingHandling(), Total();
-
-}
-
-
-// function which resets page and restores it to original page
-Neworder = () => {
-    document.getElementById("neworders").reset();
-}
 
 // Function that exits from the current page
 Exits = () => {

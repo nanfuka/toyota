@@ -1,3 +1,5 @@
+<!-- This is a toyota template that is used to culculate transactions made by toyota. -->
+<!-- author: Deborah -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,16 +12,17 @@
 </head>
 
 <body>
-
+<!-- This section is the space for  the display of all error messages -->
         <div class="errors">
-                <p id="custId"></p>
-                <p id = "towncodeerror"></p>
-                <p id="nameerror"></p>
-                <p id = "partnumber_error"></p>
-                <p id = "disc_error"></p>
-                <p id = "price_error"></p>
+                <p id="custId"></p><br><br><br>
+                <p id="nameerror"></p><br><br><br>
+                <p id = "towncodeerror"></p><br><br><br><br><br>
+                <p id = "partnumber_error"></p><br><br><br><br>
+                <p id = "disc_error"></p><br><br>
+                <p id = "price_error"></p><br><br><br>
                 <p id = "quantity_error"></p>
             </div>
+            <!--code for the form. it posts to the server  -->
     <form id = "neworders"  action="db" method="POST" onsubmit=" return ValidData()" >
         <div class="inner-block">
             <section class="blockone">
@@ -80,8 +83,9 @@
                             <label for="quantity" class="quantit">Quantity:</label>
                             <input type="text" name="quantity" id = "quantity" placeholder="2" class="quantity"></span><br>
 
-                        <input type="checkbox" id = "oversize" name="oversize">
-                        <label for="oversize-continer">Oversize Continer:</label>
+                            <!-- <span><label for="oversize-continer" class = "over">Oversize Continer:</label> -->
+                                <span><input type="checkbox" id = "oversize" name="oversize" class = "overinput">Oversize Container?
+
 
                     </fieldset>
                 </div>
@@ -103,6 +107,7 @@
                 </div>
 
             </section>
+            <!-- Section for the buttons that trigger various events -->
             <div class="lowerbuttons">
                 <button type = "submit">compute</button>
                 <button id = "neworderd" type = "reset">New Order</button>
@@ -118,4 +123,4 @@
     <script src="myscript.js"></script>
 </body>
 
-</html>
+</html
